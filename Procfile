@@ -1,0 +1,1 @@
+web: ./build/install/tmd-services/bin/tmd-services
