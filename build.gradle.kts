@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "dev.trentmyr"
-version = "0.0.1"
+version = "0.0.2"
 
 application {
     mainClass.set("dev.trentmyr.ApplicationKt")
@@ -24,6 +24,7 @@ repositories {
 }
 
 dependencies {
+    // server
     implementation("io.ktor:ktor-server-cors-jvm")
     implementation("io.ktor:ktor-server-default-headers-jvm")
     implementation("io.ktor:ktor-server-core-jvm")
@@ -31,8 +32,11 @@ dependencies {
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm")
     implementation("io.ktor:ktor-server-netty-jvm")
     implementation("ch.qos.logback:logback-classic:$logback_version")
+    // client
     implementation("io.ktor:ktor-client-core:$ktor_version")
     implementation("io.ktor:ktor-client-cio:$ktor_version")
+    implementation("io.ktor:ktor-client-content-negotiation:$ktor_version")
+    // test
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 }
