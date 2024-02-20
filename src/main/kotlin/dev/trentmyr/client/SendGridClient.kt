@@ -13,13 +13,14 @@ import io.ktor.util.logging.*
  * Very simple SendGrid client, only supports one send operation confined to a single dynamic template
  */
 object SendGridClient {
+    private val apiKey = System.getenv("FT_SG_APIKEY")
 //    private val LOGGER = KtorSimpleLogger("client.SendGridClient")
     suspend fun sendRequestForQuote(quoteRequest: QuoteRequest): HttpResponse {
         return httpClient.post {
             url("https://api.sendgrid.com/v3/mail/send")
             headers {
                 // TODO: do not hardcode api key
-                bearerAuth("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")
+                bearerAuth(apiKey)
             }
             contentType(ContentType.Application.Json)
             setBody(requestForQuotePostBody(quoteRequest))
