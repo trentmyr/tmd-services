@@ -1,4 +1,4 @@
-package dev.trentmyr.models.finaltouch
+package dev.trentmyr.models.sendgrid.templateData
 
 import kotlinx.serialization.Serializable
 
@@ -12,4 +12,4 @@ data class QuoteRequest(
     val phoneNumber: String,
     val selections: List<String>,
     val description: String
-)
+): DynamicTemplateData

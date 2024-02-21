@@ -1,6 +1,6 @@
 package dev.trentmyr.models.sendgrid
 
-import dev.trentmyr.models.finaltouch.QuoteRequest
+import dev.trentmyr.models.sendgrid.templateData.DynamicTemplateData
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -10,6 +10,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Personalization(
     val to: List<Email>,
-    @SerialName("dynamic_template_data") val dynamicTemplateData: QuoteRequest
-
+    @SerialName("dynamic_template_data") val dynamicTemplateData: DynamicTemplateData
 )

@@ -1,7 +1,7 @@
 package dev.trentmyr.plugins
 
 import dev.trentmyr.client.SendGridClient
-import dev.trentmyr.models.finaltouch.QuoteRequest
+import dev.trentmyr.models.sendgrid.templateData.QuoteRequest
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
