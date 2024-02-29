@@ -7,6 +7,7 @@ import io.ktor.server.plugins.defaultheaders.*
 
 fun Application.configureHTTP() {
     install(CORS) {
+        allowMethod(HttpMethod.Options)
         allowMethod(HttpMethod.Post)
         allowHeader(HttpHeaders.ContentType)
         allowHost("finaltouchcincy")

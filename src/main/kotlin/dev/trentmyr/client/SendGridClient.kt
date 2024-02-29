@@ -30,7 +30,8 @@ object SendGridClient {
             dynamicTemplateEmail(
                 templateID = "d-d3c1e03840c74200a7bc1d172d2b1e70",
                 templateData = quoteRequest,
-                recipient = Email("Final Touch Leads", "leads@netorgft14864482.onmicrosoft.com")
+//                recipient = Email("Final Touch Leads", "leads@netorgft14864482.onmicrosoft.com")
+                recipient = Email("Trent Meyer", "self@trentmyr.dev")
             )
         )
     }
