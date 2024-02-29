@@ -29,7 +29,8 @@ object SendGridClient {
         return httpClient.mailSend(
             dynamicTemplateEmail(
                 templateID = "d-d3c1e03840c74200a7bc1d172d2b1e70",
-                templateData = quoteRequest
+                templateData = quoteRequest,
+                recipient = Email("Final Touch Leads", "leads@netorgft14864482.onmicrosoft.com")
             )
         )
     }
@@ -55,17 +56,15 @@ object SendGridClient {
      */
     private fun dynamicTemplateEmail(
         templateID: String,
-        templateData: DynamicTemplateData
+        templateData: DynamicTemplateData,
+        recipient: Email
     ): SendEmail {
         return SendEmail(
             from = emailSource,
             templateID = templateID,
             personalizations = listOf(
                 Personalization(
-                    to = listOf(
-                        // TODO: change to leads@ address when testing is complete
-                        Email("Trent Meyer", "self@trentmyr.dev")
-                    ),
+                    to = listOf(recipient),
                     dynamicTemplateData = templateData
                 )
             )

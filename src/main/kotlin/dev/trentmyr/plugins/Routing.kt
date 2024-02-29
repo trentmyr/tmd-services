@@ -10,9 +10,6 @@ import io.ktor.util.logging.*
 internal val LOGGER = KtorSimpleLogger("plugins.Routing")
 fun Application.configureRouting() {
     routing {
-        get("/") {
-            call.respondText("Hello, World!")
-        }
         finalTouchRoutes()
     }
 }

@@ -9,8 +9,9 @@ fun Application.configureHTTP() {
     install(CORS) {
         allowMethod(HttpMethod.Post)
         allowHeader(HttpHeaders.ContentType)
-//        allowHost("finaltouchcincy")
-        anyHost() // @TODO: Don't do this in production if possible. Try to limit it.
+        allowHost("finaltouchcincy")
+        // Local testing only!
+//        anyHost()
     }
     install(DefaultHeaders) {
         header("X-Engine", "Ktor") // will send this header with each response
