@@ -19,9 +19,6 @@ fun Routing.finalTouchRoutes() {
     // TODO: require auth key from client in order to accept request
     route("/finalTouch") {
         route("/sendQuoteRequest") {
-            options {
-                call.respond(HttpStatusCode.OK)
-            }
             post<QuoteRequest> { quoteRequest ->
 //                LOGGER.info("Processing incoming quote request with data: $quoteRequest")
                 val response = SendGridClient.sendRequestForQuote(quoteRequest)

@@ -10,9 +10,8 @@ fun Application.configureHTTP() {
         allowMethod(HttpMethod.Options)
         allowMethod(HttpMethod.Post)
         allowHeader(HttpHeaders.ContentType)
-        allowHost("finaltouchcincy")
         // Local testing only!
-//        anyHost()
+        anyHost()
     }
     install(DefaultHeaders) {
         header("X-Engine", "Ktor") // will send this header with each response
